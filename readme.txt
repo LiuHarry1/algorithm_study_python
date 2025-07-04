@@ -1,0 +1,1 @@
+[x for x in arr if x < povit]
