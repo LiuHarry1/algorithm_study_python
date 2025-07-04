@@ -1,3 +1,4 @@
+import numpy as np
 
 def matrix_multiple(a, b):
 
@@ -14,6 +15,15 @@ def matrix_multiple(a, b):
 
     return result_c
 
+def matrix_multiple_by_numpy(a, b):
+
+    a = np.array(a)
+    b = np.array(b)
+
+    return np.dot(a, b)
+
+
+
 
 if __name__ == '__main__':
 
@@ -29,4 +39,7 @@ if __name__ == '__main__':
     ]
 
     result = matrix_multiple(a, b)
+    print(result)
+
+    result = matrix_multiple_by_numpy(a, b)
     print(result)
