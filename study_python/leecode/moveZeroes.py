@@ -41,7 +41,8 @@ class Solution(object):
 
 
 if __name__ == '__main__':
-    nums = [0,1,0,3,12]
+    # nums = [0,1,0,3,12]
+    nums = [1,2,3,4]
     solution = Solution()
     result = solution.moveZeroes(nums)
     print(result)
