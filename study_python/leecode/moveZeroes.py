@@ -16,8 +16,6 @@
 
 """
 
-
-
 class Solution(object):
     def moveZeroes(self, nums):
         """
@@ -37,7 +35,6 @@ class Solution(object):
             right +=1
 
         return nums
-
 
 
 if __name__ == '__main__':
