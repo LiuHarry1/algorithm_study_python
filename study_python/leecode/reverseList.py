@@ -20,8 +20,6 @@ def reverseList(head:listNode) -> listNode:
     return pre
 
 
-
-
 if __name__ == '__main__':
     head = listNode(1)
     head.next = listNode(2)
