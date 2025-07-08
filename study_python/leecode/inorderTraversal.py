@@ -26,6 +26,7 @@ class Solution(object):
 
 if __name__ == '__main__':
     root = TreeNode(1)
+    root.left =  TreeNode(4)
     root.right = TreeNode(2)
     root.right.left = TreeNode(3)
 
