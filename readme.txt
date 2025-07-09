@@ -42,3 +42,25 @@ spring web security  ->  spring cloud Oauth2
 限流的方式有那些？
 
 https://leetcode.cn/problems/a7VOhD/description/
+
+
+
+以下信息需要了解一下：
+1、目前薪资（月薪+年总）： (4.4万+（53+4(奖金)）)
+2、期望薪资： 60+
+3、看机会原因： 花旗公司集体裁员
+4、到岗时间： 随时
+5、出生年月以及婚姻状况： 1986-10-24， 已婚
+6，籍贯和定居地: 陕西，已经定居上海
+7，英语可否无障碍沟通： 是
+目前的公司有内部级别吗？晋升到此职级的时间，是否带团队，几人 ， 公司的级别是VP(vice president) ， 2023年升到VP.  带两个团队（java 团队（6） 和AI 团队（7））
+
+
+
+https://leetcode.cn/problems/merge-intervals/description/?envType=study-plan-v2&envId=top-100-liked
+
+算法题
+
+蚂蚁国际： 合并区间 输出数组内最高频率的数字
+特斯拉： 337. 打家劫舍 III  他还给了一个拓展 ， 返回这个最大路径里面所有的值（array
+字节跳动： LCR 020. 回文子串
