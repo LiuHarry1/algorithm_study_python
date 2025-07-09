@@ -2,9 +2,8 @@ def threeSum(nums):
     nums.sort()
     n = len(nums)
     result = []
-    print(n - 2)
+
     for i in range(n - 2):
-        print(i)
         # Skip duplicate for the first number
         if i > 0 and nums[i] == nums[i - 1]:
             continue
