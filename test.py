@@ -1,29 +1,12 @@
-# Definition for singly-linked list.
-# class ListNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
+from collections import deque
 
-class Solution(object):
-    def getIntersectionNode(self, headA, headB):
-        """
-        :type head1, head1: ListNode
-        :rtype: ListNode
-        """
-        nodeA = headA
-        nodeB = headA
+d = deque([1, 2, 3])
+d.popleft()      # 返回 1
+print(d)         # 输出 deque([2, 3])
 
-        while nodeA != nodeB:
-            if nodeA:
-                nodeA =  nodeA.next
-            else:
-                nodeA = headB
 
-            if nodeB:
-                nodeB = nodeB.next
-            else:
-                nodeB = headA
-            # nodeA = (nodeA == None)? headB: nodeA.next
-            # nodeB = (nodeB == None)? headA: nodeB.next
-
-        return nodeA
+print(d[-1])
+d.append(5)
+print(d)
+d.pop()
+print(d)
