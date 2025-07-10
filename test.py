@@ -1,23 +1,53 @@
-from collections import deque
 
-# 创建一个空的 deque
-dq = deque()
+def minWindow(s: str, t: str) -> str:
 
-# 从右边添加元素（类似 append）
-dq.append('a')      # deque(['a'])
-dq.append('b')      # deque(['a', 'b'])
+    left =0
 
-print(dq[0])
-print(dq[-1])
-# 从左边添加元素
-dq.appendleft('x')  # deque(['x', 'a', 'b'])
+    target_count = {}
+    for char in t:
+        target_count[char] = target_count.get(char, 0) +1
 
-# 从右边删除元素
-dq.pop()            # 返回 'b'，dq 变为 deque(['x', 'a'])
+    min_len = float('inf')
+    window_count = {}
+    formed =0
+    required = len(target_count)
+    result = ""
 
-# 从左边删除元素
-dq.popleft()        # 返回 'x'，dq 变为 deque(['a'])
+    for right in range(len(s)):
+        char = s[right]
+        window_count[char] = window_count.get(char, 0) + 1
 
-print(dq)           # deque(['a'])
+        if char in target_count and window_count[char] == target_count[char]:
+            formed +=1
+
+        while left <= right and formed ==required:
+            current_len = right -left +1
+            if current_len < min_len:
+                min_len = min(current_len, min_len)
+                result = s[left:right+1]
+
+            left_char = s[left]
+            window_count[left_char] -=1
+            if left_char in target_count and window_count[left_char] < target_count[left_char]:
+                formed -=1
+
+            left +=1
 
 
+    return result
+
+
+
+# 测试示例
+if __name__ == "__main__":
+    s = "ADOBECODEBANC"
+    t = "ABC"
+    print(minWindow(s, t))  # 输出: "BANC"
+
+    s = "a"
+    t = "a"
+    print(minWindow(s, t))  # 输出: "a"
+    #
+    # s = "a"
+    # t = "aa"
+    # print(minWindow(s, t))  # 输出: ""
