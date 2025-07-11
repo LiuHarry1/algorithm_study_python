@@ -15,6 +15,7 @@ def firstMissingPositive(nums):
 
     for i in range(n):
         num = abs(nums[i])
+        print(num)
         if num <= n:
             nums[num-1] = -abs(nums[num-1])
 

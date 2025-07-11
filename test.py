@@ -1,53 +1,24 @@
+class Solution(object):
+    def firstMissingPositive(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        n = len(nums)
 
-def minWindow(s: str, t: str) -> str:
+        # set n+1 for nagative number
+        for i in range(n):
+            if nums[i] <= 0:
+                nums[i] = n + 1
 
-    left =0
+        for i in range(n):
+            num = abs(nums[i])
+            if num < n:
+                nums[num - 1] = -abs(nums[num - 1])
 
-    target_count = {}
-    for char in t:
-        target_count[char] = target_count.get(char, 0) +1
+        for i in range(n):
+            if nums[i] > 0:
+                return i + 1
 
-    min_len = float('inf')
-    window_count = {}
-    formed =0
-    required = len(target_count)
-    result = ""
+        return n + 1
 
-    for right in range(len(s)):
-        char = s[right]
-        window_count[char] = window_count.get(char, 0) + 1
-
-        if char in target_count and window_count[char] == target_count[char]:
-            formed +=1
-
-        while left <= right and formed ==required:
-            current_len = right -left +1
-            if current_len < min_len:
-                min_len = min(current_len, min_len)
-                result = s[left:right+1]
-
-            left_char = s[left]
-            window_count[left_char] -=1
-            if left_char in target_count and window_count[left_char] < target_count[left_char]:
-                formed -=1
-
-            left +=1
-
-
-    return result
-
-
-
-# 测试示例
-if __name__ == "__main__":
-    s = "ADOBECODEBANC"
-    t = "ABC"
-    print(minWindow(s, t))  # 输出: "BANC"
-
-    s = "a"
-    t = "a"
-    print(minWindow(s, t))  # 输出: "a"
-    #
-    # s = "a"
-    # t = "aa"
-    # print(minWindow(s, t))  # 输出: ""
