@@ -46,7 +46,7 @@ def setZeroes( matrix):
 
 if __name__ == '__main__':
 
-    matrix = [[1,1,1],[1,0,1],[1,1,1]]
+    matrix = [[1,1,1],[0,1,1],[1,1,1]]
     result = setZeroes(matrix)
     print(result)
 

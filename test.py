@@ -1,24 +1,24 @@
-class Solution(object):
-    def firstMissingPositive(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
-        n = len(nums)
+from collections import OrderedDict
 
-        # set n+1 for nagative number
-        for i in range(n):
-            if nums[i] <= 0:
-                nums[i] = n + 1
+class LRU():
 
-        for i in range(n):
-            num = abs(nums[i])
-            if num < n:
-                nums[num - 1] = -abs(nums[num - 1])
+    def __init__(self, capacity):
+        self.capacity = capacity
+        self.cache = OrderedDict()
 
-        for i in range(n):
-            if nums[i] > 0:
-                return i + 1
+    def get(self, key):
+        if  key not in self.cache:
+            return -1
+        value = self.cache.pop(key)
+        self.cache[key] = value
 
-        return n + 1
+        return value
+    def put(self, key, value):
+        if key in self.cache:
+            self.cache.pop(key)
+        elif len(self.cache) > self.capacity:
+            self.cache.popitem(last=False)
+        self.cache[key] =value
+
+
 
