@@ -4,6 +4,26 @@ class ListNode(object):
         self.val =val
         self.next = next
 
+def has_cycle(node):
+
+    if not node or not node.next:
+        return False, node
+
+    slow =node
+    fast = node
+
+    while (slow !=fast):
+
+        if not fast or not fast.next:
+            return False, None
+
+
+        slow = slow.next
+        fast = fast.next.next
+
+    return True, slow
+
+
 
 
 def detectCycle(head):

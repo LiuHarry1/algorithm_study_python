@@ -16,17 +16,17 @@ def hasCycle(head):
     :rtype: bool
     """
 
-    if not head or head.next:
+    if not head or not head.next:
         return False
 
     slow = head
-    fast = head.next
+    fast = head
 
-    while slow != fast:
-        if not fast or not fast.next:
-            return False
+    while fast and fast.next:
         slow = slow.next
         fast = fast.next.next
 
-    return True
+        if slow == fast:
+            return True
 
+    return False

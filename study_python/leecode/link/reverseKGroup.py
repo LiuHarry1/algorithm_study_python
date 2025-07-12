@@ -40,3 +40,42 @@ class Solution:
             head = next_group
 
         return dummy.next
+
+
+# 辅助函数：将列表转换为链表
+def list_to_linkedlist(lst):
+    dummy = ListNode(0)
+    curr = dummy
+    for num in lst:
+        curr.next = ListNode(num)
+        curr = curr.next
+    return dummy.next
+
+
+# 辅助函数：将链表转换为列表（方便比较）
+def linkedlist_to_list(head):
+    lst = []
+    while head:
+        lst.append(head.val)
+        head = head.next
+    return lst
+
+
+if __name__ == "__main__":
+    sol = Solution()
+
+    # 测试用例：head = [1,2,3,4,5], k = 3
+    input_list = [1, 2, 3, 4, 5]
+    k = 3
+    expected_output = [3, 2, 1, 4, 5]
+
+    # 执行翻转
+    head = list_to_linkedlist(input_list)
+    result = sol.reverseKGroup(head, k)
+    result_list = linkedlist_to_list(result)
+
+    # 验证结果
+    print(f"Input: {input_list}, k = {k}")
+    print(f"Expected Output: {expected_output}")
+    print(f"Actual Output: {result_list}")
+    print("Test Passed!" if result_list == expected_output else "Test Failed!")

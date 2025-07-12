@@ -1,24 +1,30 @@
-from collections import OrderedDict
 
-class LRU():
+def mergeKLists(self, lists):
 
-    def __init__(self, capacity):
-        self.capacity = capacity
-        self.cache = OrderedDict()
+    def merge(l1, l2):
 
-    def get(self, key):
-        if  key not in self.cache:
-            return -1
-        value = self.cache.pop(key)
-        self.cache[key] = value
+        dummy = ListNode(0)
+        curr = dummy
 
-        return value
-    def put(self, key, value):
-        if key in self.cache:
-            self.cache.pop(key)
-        elif len(self.cache) > self.capacity:
-            self.cache.popitem(last=False)
-        self.cache[key] =value
+        while l1 and l2:
+            if l1.val < l2.val:
+                curr.next = l1
+                l1 = l2.next
+            else:
+                curr.next =l2
+                l2 = l2.next
+            curr = cur.next
 
+        curr.next = l1 if l1 else l2
+
+        return dummy.next
 
 
+    interval =1
+    n = len(lists)
+    while interval < n:
+        for i in range(0, n -interval, interval*2):
+            list[i] = merge(list[i], list[i+interval])
+        interval *=2
+
+    return list[0]
