@@ -1,14 +1,11 @@
 
-from collections import deque
+count = 15
 
-dq = deque()
+while count >10:
+    print(count , "11")
 
-dq.append("1")
-dq.append("2")
-dq.append("3")
-print(dq)
-
-print(dq.popleft())
-print(dq)
-
-
+    count -=1
+    if count ==13:
+        break
+else:
+    print("else", count)
