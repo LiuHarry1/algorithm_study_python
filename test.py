@@ -1,30 +1,14 @@
 
-def mergeKLists(self, lists):
+from collections import deque
 
-    def merge(l1, l2):
+dq = deque()
 
-        dummy = ListNode(0)
-        curr = dummy
+dq.append("1")
+dq.append("2")
+dq.append("3")
+print(dq)
 
-        while l1 and l2:
-            if l1.val < l2.val:
-                curr.next = l1
-                l1 = l2.next
-            else:
-                curr.next =l2
-                l2 = l2.next
-            curr = cur.next
-
-        curr.next = l1 if l1 else l2
-
-        return dummy.next
+print(dq.popleft())
+print(dq)
 
 
-    interval =1
-    n = len(lists)
-    while interval < n:
-        for i in range(0, n -interval, interval*2):
-            list[i] = merge(list[i], list[i+interval])
-        interval *=2
-
-    return list[0]
