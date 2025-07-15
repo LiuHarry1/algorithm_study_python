@@ -1,11 +1,8 @@
+nums = [1,2,3]
 
-count = 15
+print(nums[1:])
+print(nums[1:2])
 
-while count >10:
-    print(count , "11")
 
-    count -=1
-    if count ==13:
-        break
-else:
-    print("else", count)
+for i in range(2, 1, -1):
+    print(i)
