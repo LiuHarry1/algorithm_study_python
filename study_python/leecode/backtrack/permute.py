@@ -5,6 +5,7 @@
 
 def permute(nums):
     def backtrack(path, used):
+        print(path)
         if len(path) == len(nums):
             res.append(path[:])
             return
@@ -22,3 +23,7 @@ def permute(nums):
     used = [False] * len(nums)
     backtrack([], used)
     return res
+
+if __name__ == '__main__':
+    result = permute([1,2,3])
+    print(result)

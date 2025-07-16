@@ -66,3 +66,30 @@ https://leetcode.cn/problems/merge-intervals/description/?envType=study-plan-v2&
 字节跳动： LCR 020. 回文子串
 
 力扣原题735 小行星碰撞,Leetcode47，和leetcode143
+
+
+
+
+
+/Users/harry/miniforge3/envs/llm_ft/bin/python /Users/harry/PycharmProjects/algorithm_study/study_python/leecode/backtrack/permute.py
+[]
+[1]
+[1, 2]
+[1, 2, 3]
+[1, 3]
+[1, 3, 2]
+[2]
+[2, 1]
+[2, 1, 3]
+[2, 3]
+[2, 3, 1]
+[3]
+[3, 1]
+[3, 1, 2]
+[3, 2]
+[3, 2, 1]
+[[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
+
+Process finished with exit code 0
+
+[[], [1], [1, 1], [1, 1, 1], [1, 1, 2], [1, 1, 3], [1, 2], [1, 2, 2], [1, 2, 3], [1, 3], [1, 3, 3], [2], [2, 2], [2, 2, 2], [2, 2, 3], [2, 3], [2, 3, 3], [3], [3, 3], [3, 3, 3]]

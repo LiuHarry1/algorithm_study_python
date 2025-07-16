@@ -1,8 +1,10 @@
 nums = [1,2,3]
 
-print(nums[1:])
-print(nums[1:2])
+# print(nums[1:])
+# print(nums[1:2])
 
-
-for i in range(2, 1, -1):
-    print(i)
+print(nums)
+nums = set()
+nums.add(4)
+nums = nums |{4}
+print(nums)
