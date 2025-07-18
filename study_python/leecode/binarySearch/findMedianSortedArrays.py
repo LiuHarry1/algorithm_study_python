@@ -1,5 +1,5 @@
 class Solution:
-    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+    def findMedianSortedArrays(self, nums1, nums2) -> float:
         # 确保 nums1 是较短的数组
         if len(nums1) > len(nums2):
             nums1, nums2 = nums2, nums1
