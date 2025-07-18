@@ -1,33 +1,26 @@
 class Solution(object):
-    def generateParenthesis(self, n):
+    def climbStairs(self, n):
         """
         :type n: int
-        :rtype: List[str]
+        :rtype: int
         """
 
-        self.result = []
+        dp = [1] * (n + 1)
 
-        def backtrack(path, open_remaining, close_remaining):
-            if open_remaining==0:
-                return
+        dp[0] = 0
+        dp[1] = 1
 
-            if close_remaining == 0:
-                self.result.append("".join(path))
-                return
+        for i in range(1, n + 1):
+            dp[i] = max(dp[i], 1 + dp[i - 1])
 
-            # if open_remaining > 0:
-            path.append("(")
-            backtrack(path, open_remaining - 1, close_remaining)
-            path.pop()
+        return dp[n]
 
-            # if close_remaining > open_remaining:
-            path.append(")")
-            backtrack(path, open_remaining, close_remaining - 1)
-            path.pop()
+        pre_max = 1
+        cur_max = 0
 
-        backtrack([], n, n)
-        return self.result
+        for i in range(n):
+            tmp = cur_max
+            cur_max = max(pre_max + 1, cur_max)
+            pre_max = tmp
 
-if __name__ == '__main__':
-    sol = Solution()
-    print(sol.generateParenthesis(3))  # 输出: ["((()))","(()())","(())()","()(())","()()()"]
+        return cur_max
