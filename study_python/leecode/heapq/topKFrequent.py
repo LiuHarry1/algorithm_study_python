@@ -36,6 +36,22 @@ def topKFrequent_new(nums, k):
     return result[:k]
 
 
+def topKFrequent(nums, k):
+    # 手动统计频率
+    freq_map = {}
+    for num in nums:
+        freq_map[num] = freq_map.get(num, 0) + 1
+
+    # 构建小顶堆，按频率排序
+    heap = []
+    for num, freq in freq_map.items():
+        heapq.heappush(heap, (freq, num))  # (频率, 元素)
+        if len(heap) > k:
+            heapq.heappop(heap)
+
+    # 从堆中提取元素
+    return [num for freq, num in heap]
+
 
 if __name__ == '__main__':
 
